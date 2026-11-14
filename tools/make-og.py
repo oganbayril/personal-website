@@ -1,4 +1,9 @@
-"""Generate public/og-image.png (1200x630), the image link previews show.
+"""Generate public/og-image-v2.png (1200x630), the image link previews show.
+
+The file name carries a version because LinkedIn and others cache preview images
+by URL: after a visible change, bump it (og-image-v3.png), update OUT below and the
+og:image / twitter:image tags in every page and templates/project.html, and delete
+the old file.
 
     pip install pillow            (only for the final PNG optimisation)
     python tools/make-og.py       (needs Microsoft Edge or Google Chrome installed)
@@ -22,7 +27,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 FONTS = ROOT / "public" / "assets" / "fonts"
 TEMPLATE = ROOT / "tools" / "og-template.html"
-OUT = ROOT / "public" / "og-image.png"
+OUT = ROOT / "public" / "og-image-v2.png"
 W, H = 1200, 630
 
 FONT_FILES = {
