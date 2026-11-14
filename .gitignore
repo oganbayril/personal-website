@@ -1,0 +1,17 @@
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.vscode/
+.idea/
+
+# Python cache from serve.py
+__pycache__/
+
+# Original screenshots; web copies live in public/assets/img/projects/
+screenshots-raw/
+
+# Deploy target (server host and user); template is deploy.env.example
+deploy.env

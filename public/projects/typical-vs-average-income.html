@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Typical vs average income map – Ogan Bayril</title>
+  <meta name="description" content="Typical vs average income map, a project by Ogan Bayril: the question, the result, the tools, a live demo and the code.">
+  <link rel="canonical" href="https://oganbayril.com/projects/typical-vs-average-income">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1c20" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ogan Bayril">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Typical vs average income map – Ogan Bayril">
+  <meta property="og:description" content="Typical vs average income map, a project by Ogan Bayril: the question, the result, the tools, a live demo and the code.">
+  <meta property="og:url" content="https://oganbayril.com/projects/typical-vs-average-income">
+  <meta property="og:image" content="https://oganbayril.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ogan Bayril, oganbayril.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/theme.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Ogan Bayril</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects" aria-current="page">Projects</a></li>
+          <li><a href="/cv">CV</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-switch" role="group" aria-label="Colour theme" hidden>
+        <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <a class="back" href="/projects">&larr; All projects</a>
+
+      <h1>Typical vs average income map</h1>
+      <p class="lede">Maps how far the typical person's income sits from the average across 45 countries, 2002-2024. In Türkiye it's about 70%, in most of Europe 83-93%.</p>
+
+      <div class="actions">
+        <a class="button primary" href="https://typical-vs-average-income.oganbayril.com">Live demo</a>
+        <a class="button" href="https://github.com/oganbayril/typical-vs-average-income">Code on GitHub</a>
+      </div>
+
+      <figure class="shot-figure">
+        <a class="shot-link" href="/assets/img/projects/typical-vs-average-income.png" target="_blank" rel="noopener" title="Open full size">
+          <img src="/assets/img/projects/typical-vs-average-income.png" alt="Map of Europe shaded in four tiers by the typical person's income as a percentage of the average. Türkiye is in the darkest tier, below 73%, and the UK is hatched as an OECD value." width="1200" height="560">
+        </a>
+        <figcaption>The Europe view in tiers, latest value per country: Türkiye is in the lowest tier, below 73% of the average.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <h2>The question</h2>
+        <p>The average (mean) income is pulled up by the highest incomes; the median is the income of the person in the middle. How far does the typical person's income sit from the average, and how does that differ across countries and over time?</p>
+        <p>The measure is the median-to-mean household income ratio: "the typical person has X% of the average income".</p>
+
+        <h2>The result</h2>
+        <p>An interactive map across 45 European and OECD countries, 2002-2024: in Türkiye the typical person has about 70% of the average income, versus 83-93% in most of Europe.</p>
+        <p>Eurostat is the default source and OECD is used only to fill gaps (hatched on the map) instead of averaging them. The difference between the two sources was measured on 433 country-years (95% within ±0.03), and that uncertainty is on the page.</p>
+        <p>Colour tiers sit at natural gaps in the data, and a continuous colour view means the story does not depend on where the lines fall. Suspicious series (Slovakia, North Macedonia, Türkiye) are logged instead of smoothed.</p>
+
+        <h2>Tools</h2>
+        <ul>
+          <li>Python and Pandas: data collection, cleaning and source checks</li>
+          <li>Plotly: the interactive map</li>
+          <li>Data: <a href="https://ec.europa.eu/eurostat/databrowser/product/view/ilc_di03">Eurostat EU-SILC (ilc_di03)</a>, with the OECD Income Distribution Database filling gaps</li>
+          <li>Hosting: my own VPS with HTTPS</li>
+        </ul>
+
+        <h2>Links</h2>
+        <ul>
+          <li>Live demo: <a href="https://typical-vs-average-income.oganbayril.com">https://typical-vs-average-income.oganbayril.com</a></li>
+          <li>Code: <a href="https://github.com/oganbayril/typical-vs-average-income">github.com/oganbayril/typical-vs-average-income</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Ogan Bayril</span>
+      <ul>
+        <li><a href="https://github.com/oganbayril">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ogan-bayril" rel="me">LinkedIn</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a3f7adf2688b47a887d9b404e6b122e1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

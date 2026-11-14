@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EU energy transition analysis – Ogan Bayril</title>
+  <meta name="description" content="EU energy transition analysis, a project by Ogan Bayril: a Power BI dashboard tour, the question, the result, the tools and the code.">
+  <link rel="canonical" href="https://oganbayril.com/projects/eu-energy-transition">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1c20" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ogan Bayril">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="EU energy transition analysis – Ogan Bayril">
+  <meta property="og:description" content="EU energy transition analysis, a project by Ogan Bayril: a Power BI dashboard tour, the question, the result, the tools and the code.">
+  <meta property="og:url" content="https://oganbayril.com/projects/eu-energy-transition">
+  <meta property="og:image" content="https://oganbayril.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ogan Bayril, oganbayril.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/theme.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Ogan Bayril</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects" aria-current="page">Projects</a></li>
+          <li><a href="/cv">CV</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-switch" role="group" aria-label="Colour theme" hidden>
+        <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <a class="back" href="/projects">&larr; All projects</a>
+
+      <h1>EU energy transition analysis</h1>
+      <p class="lede">Renewable share nearly tripled, yet import dependency fell only 1.4 points. Ridge/Lasso panel models and a Power BI dashboard explain why.</p>
+
+      <div class="actions">
+        <a class="button primary" href="https://github.com/oganbayril/eu-energy-transition-analysis/raw/main/dashboard/eu-energy-transition-analysis.pbix">Download the Power BI file</a>
+        <a class="button" href="https://oganbayril-eu-energy-transition-analysis-dashboardapp-stset4.streamlit.app/">Streamlit app</a>
+        <a class="button" href="https://github.com/oganbayril/eu-energy-transition-analysis">Code on GitHub</a>
+      </div>
+      <p class="link-note">Streamlit app: free-tier app, may take about 30 seconds to wake up.</p>
+
+      <section class="tour" aria-labelledby="tour-heading">
+        <h2 id="tour-heading">Dashboard tour</h2>
+        <figure class="tour-video">
+          <video src="/assets/video/eu-energy-powerbi-tour.mp4" poster="/assets/video/eu-energy-powerbi-tour-poster.jpg" width="1854" height="1074" autoplay muted playsinline controls aria-label="Screen recording of the five-page Power BI dashboard: Overview, Year-over-year changes, Country comparison, Germany case study and Renewable growth.">
+            <a href="/assets/video/eu-energy-powerbi-tour.mp4">Watch the dashboard tour (MP4, 1.7 MB)</a>
+          </video>
+          <figcaption>Hover any point to see exact values.</figcaption>
+        </figure>
+
+        <h3>The five pages</h3>
+        <ul class="gallery">
+          <li>
+            <figure>
+              <a href="/assets/img/projects/eu-energy-powerbi-1-overview.png" target="_blank" rel="noopener" title="Open full size">
+                <img src="/assets/img/projects/eu-energy-powerbi-1-overview.png" alt="Overview page: KPI cards show EU renewable energy share at 7.16% in 2005 and 19.81% in 2024 (+12.65 pp), and energy dependency at 57.45% and 56.04% (−1.41 pp); a line chart shows dependency staying near 55–60% while renewable share climbs from about 7% to 20%." width="1600" height="926" loading="lazy">
+              </a>
+              <figcaption><strong>Overview:</strong> renewable share 7.16% → 19.81% and energy dependency 57.45% → 56.04%, 2005–2024, with a year-range slider.</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="/assets/img/projects/eu-energy-powerbi-2-year-over-year.png" target="_blank" rel="noopener" title="Open full size">
+                <img src="/assets/img/projects/eu-energy-powerbi-2-year-over-year.png" alt="Year-over-year changes page: KPI cards show fossil change of −1.81%, renewable change of +4.37% and a renewable-versus-fossil gap of +6.18 pp for 2005 to 2024; a bar chart pairs grey fossil and green renewable year-over-year changes for each year." width="1600" height="926" loading="lazy">
+              </a>
+              <figcaption><strong>Year-over-year changes:</strong> fossil −1.81%, renewable +4.37%, a +6.18 pp gap, and paired yearly bars for each.</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="/assets/img/projects/eu-energy-powerbi-3-country-comparison.png" target="_blank" rel="noopener" title="Open full size">
+                <img src="/assets/img/projects/eu-energy-powerbi-3-country-comparison.png" alt="Country comparison page: a country filter set to Denmark, Italy, France and Germany; a table of their renewable share and energy dependency at the start and end of the period; and two line charts, renewable share by country and energy dependency by country, where Denmark's dependency rises from about −50% to about 38%." width="1600" height="926" loading="lazy">
+              </a>
+              <figcaption><strong>Country comparison:</strong> Denmark, Italy, France and Germany side by side in a table and two line charts, chosen with a country filter.</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="/assets/img/projects/eu-energy-powerbi-4-germany-case-study.png" target="_blank" rel="noopener" title="Open full size">
+                <img src="/assets/img/projects/eu-energy-powerbi-4-germany-case-study.png" alt="Germany case study page: index cards with 2005 = 100 show nuclear at 0.0, renewables at 282.3, fossil at 68.7 and energy dependency at 110.1 by 2024; a line chart of the four indices; and an area chart of cumulative nuclear loss against renewable gain in PWh." width="1600" height="926" loading="lazy">
+              </a>
+              <figcaption><strong>Germany case study:</strong> indices with 2005 = 100 (nuclear 0.0, renewables 282.3, fossil 68.7, dependency 110.1) and cumulative nuclear loss vs renewable gain.</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <a href="/assets/img/projects/eu-energy-powerbi-5-renewable-growth.png" target="_blank" rel="noopener" title="Open full size">
+                <img src="/assets/img/projects/eu-energy-powerbi-5-renewable-growth.png" alt="Renewable growth page: cards name Estonia as most improved (33.12 pp), Malta as least improved (1.83 pp) and an EU average growth of 13.21 pp; a bar chart ranks the renewable share growth of all 27 EU countries from 2005 to 2024 in three colour tiers." width="1600" height="926" loading="lazy">
+              </a>
+              <figcaption><strong>Renewable growth:</strong> renewable share growth for all 27 countries, from Estonia (33.12 pp) to Malta (1.83 pp), EU average 13.21 pp.</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+
+      <div class="prose">
+        <h2>The question</h2>
+        <p>The EU has built a lot of renewable energy since 2005. Has that made it less dependent on imported energy? And what drives how fast each country's renewable share grows?</p>
+
+        <h2>The result</h2>
+        <p>Although the EU's renewable share nearly tripled (7.2% to 19.8%) over 19 years, energy import dependency fell by only 1.4 percentage points, because dependency also depends on nuclear policy, domestic production and total demand.</p>
+        <p>A 27-country panel built from the Eurostat REST API was used to train regularised Ridge/Lasso models with expanding-window cross-validation: electricity price was the strongest positive driver of renewable share, and GDP growth was negatively associated with it within countries.</p>
+        <p>Delivered as six Jupyter notebooks, a five-page Power BI dashboard (DAX measures, synchronised slicers) and an interactive Streamlit app.</p>
+
+        <h2>Tools</h2>
+        <ul>
+          <li>Python, Pandas and SQL: cleaning and the 27-country panel</li>
+          <li>scikit-learn: Ridge/Lasso models with expanding-window cross-validation</li>
+          <li>Plotly and Streamlit: the interactive app; Power BI (DAX): the five-page dashboard</li>
+          <li>Data: Eurostat API: <a href="https://ec.europa.eu/eurostat/databrowser/product/view/nrg_bal_c">energy balances (nrg_bal_c)</a>, <a href="https://ec.europa.eu/eurostat/databrowser/product/view/nama_10_pc">GDP per capita (nama_10_pc)</a>, <a href="https://ec.europa.eu/eurostat/databrowser/product/view/nrg_pc_204">household electricity prices (nrg_pc_204)</a></li>
+          <li>Hosting: Streamlit Community Cloud (the Power BI file is in the repo)</li>
+        </ul>
+
+        <h2>Links</h2>
+        <ul>
+          <li>Streamlit app: <a href="https://oganbayril-eu-energy-transition-analysis-dashboardapp-stset4.streamlit.app/">https://oganbayril-eu-energy-transition-analysis-dashboardapp-stset4.streamlit.app/</a> (free-tier app, may take about 30 seconds to wake up)</li>
+          <li>Code: <a href="https://github.com/oganbayril/eu-energy-transition-analysis">github.com/oganbayril/eu-energy-transition-analysis</a></li>
+          <li>Power BI file: <a href="https://github.com/oganbayril/eu-energy-transition-analysis/raw/main/dashboard/eu-energy-transition-analysis.pbix">eu-energy-transition-analysis.pbix</a> (opens in Power BI Desktop)</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Ogan Bayril</span>
+      <ul>
+        <li><a href="https://github.com/oganbayril">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ogan-bayril" rel="me">LinkedIn</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a3f7adf2688b47a887d9b404e6b122e1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

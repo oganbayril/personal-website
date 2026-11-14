@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV – Ogan Bayril</title>
+  <meta name="description" content="CV of Ogan Bayril, junior data analyst: skills, projects and education. PDF version available.">
+  <link rel="canonical" href="https://oganbayril.com/cv">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1c20" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ogan Bayril">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="CV – Ogan Bayril">
+  <meta property="og:description" content="CV of Ogan Bayril, junior data analyst: skills, projects and education. PDF version available.">
+  <meta property="og:url" content="https://oganbayril.com/cv">
+  <meta property="og:image" content="https://oganbayril.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ogan Bayril, oganbayril.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/theme.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Ogan Bayril</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/cv" aria-current="page">CV</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-switch" role="group" aria-label="Colour theme" hidden>
+        <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <div class="cv-header">
+        <h1>Ogan Bayril</h1>
+        <a class="button no-print" href="/cv.pdf" download>Download PDF</a>
+      </div>
+      <p class="muted no-print">The same content as the PDF. <a href="/cv.pdf">Open cv.pdf</a></p>
+
+      <p class="cv-tagline"><strong>Junior Data Analyst</strong> | Python · SQL · Pandas · scikit-learn · XGBoost · Power BI · Plotly · Streamlit · FastAPI · Git</p>
+      <p class="cv-meta">Based in İzmir, Turkey (UTC+3) · Remote, overlap with CET hours<br>
+        <a href="mailto:ogan@oganbayril.com">ogan@oganbayril.com</a> · <a href="/">oganbayril.com</a> · <a href="https://www.linkedin.com/in/ogan-bayril" rel="me">linkedin.com/in/ogan-bayril</a> · <a href="https://github.com/oganbayril">github.com/oganbayril</a></p>
+
+      <h2>Summary</h2>
+      <p>Self-taught junior data analyst (Python since 2022) who takes projects end to end: data collection and cleaning, analysis and modelling, then a deployed dashboard, map or API. Recent work includes a live ML price-estimation service, an interactive Eurostat/OECD income map, a Power BI energy dashboard and a Streamlit asylum-data dashboard.</p>
+
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Data analysis:</strong> Python, SQL, Pandas, data cleaning, exploratory analysis, time series and panel data, official statistics (Eurostat, OECD, UNHCR)</li>
+        <li><strong>Machine learning:</strong> scikit-learn, XGBoost, Ridge/Lasso regression, cross-validation, model evaluation</li>
+        <li><strong>Visualization and BI:</strong> Power BI (DAX), Plotly, Matplotlib, Streamlit</li>
+        <li><strong>Data engineering and deployment:</strong> PostgreSQL, SQLAlchemy, REST APIs, web scraping, FastAPI, GitHub Actions (CI), Linux VPS, Caddy</li>
+        <li><strong>Tools:</strong> Git, GitHub, Jupyter, pytest, AI-assisted development (Claude Code)</li>
+      </ul>
+
+      <h2>Projects</h2>
+      <div class="cv-entry">
+        <h3><a href="/projects/germany-real-estate-predictor">Germany Real Estate Price Predictor</a> <span class="cv-tools">| Python · XGBoost · FastAPI · PostgreSQL · scikit-learn</span></h3>
+        <p class="cv-meta">Live demo: <a href="https://germany-real-estate.oganbayril.com">germany-real-estate.oganbayril.com</a> · Code: <a href="https://github.com/oganbayril/germany-real-estate-api">github.com/oganbayril/germany-real-estate-api</a></p>
+        <ul>
+          <li>Built an end-to-end price-estimation service for apartments for sale in five German cities (Berlin, Hamburg, Köln, Leipzig, München): a robots-aware, rate-limited scraper feeds PostgreSQL, a shared feature pipeline trains an XGBoost regressor, and a FastAPI service serves predictions behind a web demo.</li>
+          <li>Built on 3,000+ scraped listings; on a held-out test set, half of estimates land within ±16% of the asking price (about 20% mean error). A plain-language model card on the demo states these limits and what the model cannot see (condition, year built, balcony, photos).</li>
+          <li>Added weekly guarded retraining, nightly backups and CI (ruff, pytest, pip-audit, 80+ tests); deployed on my own VPS with automatic HTTPS.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <h3><a href="/projects/typical-vs-average-income">Typical vs Average Income Map</a> <span class="cv-tools">| Python · Pandas · Plotly · Eurostat · OECD</span></h3>
+        <p class="cv-meta">Live map: <a href="https://typical-vs-average-income.oganbayril.com">typical-vs-average-income.oganbayril.com</a> · Code: <a href="https://github.com/oganbayril/typical-vs-average-income">github.com/oganbayril/typical-vs-average-income</a></p>
+        <ul>
+          <li>Built an interactive map of how far the typical person's income sits from the average (median-to-mean household income ratio) across 45 European and OECD countries, 2002-2024: in Türkiye the typical person has about 70% of the average income, versus 83-93% in most of Europe.</li>
+          <li>Used Eurostat as the default source and OECD only to fill gaps (hatched on the map) instead of averaging them; measured the difference between the two sources on 433 country-years (95% within ±0.03) and put that uncertainty on the page.</li>
+          <li>Placed colour tiers at natural gaps in the data and added a continuous colour view so the story does not depend on where the lines fall; logged suspicious series (Slovakia, North Macedonia, Türkiye) instead of smoothing them; deployed on my own VPS with HTTPS.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <h3><a href="/projects/eu-energy-transition">EU Energy Transition Analysis</a> <span class="cv-tools">| Python · SQL · Pandas · scikit-learn · Plotly · Power BI · Eurostat API</span></h3>
+        <p class="cv-meta">Code: <a href="https://github.com/oganbayril/eu-energy-transition-analysis">github.com/oganbayril/eu-energy-transition-analysis</a></p>
+        <ul>
+          <li>Showed that although the EU's renewable share nearly tripled (7.2% to 19.8%) over 19 years, energy import dependency fell by only 1.4 percentage points, because dependency also depends on nuclear policy, domestic production and total demand.</li>
+          <li>Built a 27-country panel from the Eurostat REST API and trained regularised Ridge/Lasso models with expanding-window cross-validation; electricity price was the strongest positive driver of renewable share, and GDP growth was negatively associated with it within countries.</li>
+          <li>Delivered six Jupyter notebooks, a five-page Power BI dashboard (DAX measures, synchronised slicers) and an interactive Streamlit app.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <h3>Turkey Asylum Seeker Analysis <span class="cv-tools">| Python · Pandas · Plotly · Streamlit · UNHCR/HDX data</span></h3>
+        <p class="cv-meta">Code: <a href="https://github.com/oganbayril/turkey-asylum-analysis">github.com/oganbayril/turkey-asylum-analysis</a></p>
+        <ul>
+          <li>Found a structural shift: Turkey absorbed a peak of about 130k foreign asylum applications in 2015 (Syrian crisis), while a separate, sustained outflow of Turkish citizens seeking asylum abroad emerged after 2016.</li>
+          <li>Built the cleaning-to-visualisation pipeline and an interactive Streamlit dashboard with animated choropleth maps.</li>
+        </ul>
+      </div>
+
+      <h2>Education</h2>
+      <div class="cv-entry">
+        <h3>Mathematics, Marmara University, 2022 - Present</h3>
+        <ul>
+          <li>Self-directed study in data analysis and programming alongside coursework; Python since 2022.</li>
+        </ul>
+      </div>
+
+      <h2>Languages</h2>
+      <p>Turkish (native) · English (professional working proficiency)</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Ogan Bayril</span>
+      <ul>
+        <li><a href="https://github.com/oganbayril">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ogan-bayril" rel="me">LinkedIn</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a3f7adf2688b47a887d9b404e6b122e1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

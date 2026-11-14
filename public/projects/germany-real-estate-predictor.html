@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Germany real estate price predictor – Ogan Bayril</title>
+  <meta name="description" content="Germany real estate price predictor, a project by Ogan Bayril: the question, the result, the tools, a live demo and the code.">
+  <link rel="canonical" href="https://oganbayril.com/projects/germany-real-estate-predictor">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1c20" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ogan Bayril">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Germany real estate price predictor – Ogan Bayril">
+  <meta property="og:description" content="Germany real estate price predictor, a project by Ogan Bayril: the question, the result, the tools, a live demo and the code.">
+  <meta property="og:url" content="https://oganbayril.com/projects/germany-real-estate-predictor">
+  <meta property="og:image" content="https://oganbayril.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ogan Bayril, oganbayril.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/theme.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Ogan Bayril</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects" aria-current="page">Projects</a></li>
+          <li><a href="/cv">CV</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-switch" role="group" aria-label="Colour theme" hidden>
+        <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <a class="back" href="/projects">&larr; All projects</a>
+
+      <h1>Germany real estate price predictor</h1>
+      <p class="lede">Estimates apartment prices in five German cities from 3,000+ scraped listings. Half of estimates land within ±16% of the asking price, and the live demo says plainly what the model can't see.</p>
+
+      <div class="actions">
+        <a class="button primary" href="https://germany-real-estate.oganbayril.com">Live demo</a>
+        <a class="button" href="https://github.com/oganbayril/germany-real-estate-api">Code on GitHub</a>
+      </div>
+
+      <figure class="shot-figure">
+        <a class="shot-link" href="/assets/img/projects/germany-real-estate-predictor.png" target="_blank" rel="noopener" title="Open full size">
+          <img src="/assets/img/projects/germany-real-estate-predictor.png" alt="The price predictor demo: a form filled in for a 75 m², 3-room flat in Friedrichshain, Berlin, and the estimated price of 376.495 € (5.020 € per m²)." width="600" height="900">
+        </a>
+        <figcaption>The live demo estimating a 75 m², 3-room flat in Friedrichshain, Berlin at 376.495 € (about €376,000), or 5.020 € per m².</figcaption>
+      </figure>
+
+      <div class="prose">
+        <h2>The question</h2>
+        <p>What is an apartment for sale in Berlin, Hamburg, Köln, Leipzig or München likely to cost, based on what its listing shows? The project answers that end to end: from collecting listings to a price-estimation service anyone can try in the browser.</p>
+
+        <h2>The result</h2>
+        <p>Built on 3,000+ scraped listings; on a held-out test set, half of estimates land within ±16% of the asking price (about 20% mean error).</p>
+        <p>A robots-aware, rate-limited scraper feeds PostgreSQL, a shared feature pipeline trains an XGBoost regressor, and a FastAPI service serves predictions behind a web demo. Weekly guarded retraining, nightly backups and CI (ruff, pytest, pip-audit, 80+ tests) keep it running.</p>
+        <p>Limits: a plain-language model card on the demo states these limits and what the model cannot see (condition, year built, balcony, photos).</p>
+
+        <h2>Tools</h2>
+        <ul>
+          <li>Python: robots-aware, rate-limited scraper and a shared feature pipeline</li>
+          <li>PostgreSQL: storage for the scraped listings</li>
+          <li>scikit-learn and XGBoost: the price model (XGBoost regressor)</li>
+          <li>FastAPI: serves predictions behind the web demo</li>
+          <li>Data: apartment listings scraped from <a href="https://www.immowelt.de">immowelt.de</a></li>
+          <li>Hosting: my own VPS with automatic HTTPS; CI with ruff, pytest and pip-audit</li>
+        </ul>
+
+        <h2>Links</h2>
+        <ul>
+          <li>Live demo: <a href="https://germany-real-estate.oganbayril.com">https://germany-real-estate.oganbayril.com</a></li>
+          <li>Code: <a href="https://github.com/oganbayril/germany-real-estate-api">github.com/oganbayril/germany-real-estate-api</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Ogan Bayril</span>
+      <ul>
+        <li><a href="https://github.com/oganbayril">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ogan-bayril" rel="me">LinkedIn</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a3f7adf2688b47a887d9b404e6b122e1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -1,0 +1,399 @@
+/* oganbayril.com: one stylesheet, mobile first, light/dark via tokens.
+   Theme: no data-theme attribute = follow the system; data-theme="light"|"dark"
+   = the visitor's explicit choice (set by the inline script in <head>). */
+
+:root {
+  color-scheme: light;
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --text: #1b1d21;
+  --muted: #5b616c;
+  --border: #e2e3e7;
+  --accent: #2753b8;
+  --accent-hover: #1d4196;
+  --accent-contrast: #ffffff;
+  --todo-bg: #fff6d1;
+  --todo-border: #c49b00;
+  --todo-text: #5c4800;
+  --radius: 10px;
+  --wrap: 52rem;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #121316;
+    --surface: #1a1c20;
+    --text: #e7e8eb;
+    --muted: #9ba1ac;
+    --border: #2d3037;
+    --accent: #8db0ff;
+    --accent-hover: #b0c8ff;
+    --accent-contrast: #0c1222;
+    --todo-bg: #2c2712;
+    --todo-border: #8f7718;
+    --todo-text: #f1dc8a;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121316;
+  --surface: #1a1c20;
+  --text: #e7e8eb;
+  --muted: #9ba1ac;
+  --border: #2d3037;
+  --accent: #8db0ff;
+  --accent-hover: #b0c8ff;
+  --accent-contrast: #0c1222;
+  --todo-bg: #2c2712;
+  --todo-border: #8f7718;
+  --todo-text: #f1dc8a;
+}
+
+/* ---- base ------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.6 var(--font);
+  overflow-wrap: break-word; /* long URLs wrap instead of widening the page */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; padding-block: 2rem 3rem; }
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .6em; }
+h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; }
+p, ul, ol, dl { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.25rem; }
+
+a { color: var(--accent); text-underline-offset: .18em; }
+a:hover { color: var(--accent-hover); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+code { font-family: var(--mono); font-size: .92em; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: .5rem .75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  z-index: 10;
+}
+.skip-link:focus { top: .5rem; }
+
+.muted { color: var(--muted); }
+
+/* ---- header ----------------------------------------------------------- */
+
+.site-header { border-bottom: 1px solid var(--border); background: var(--surface); }
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .25rem 1rem;
+  padding-block: .6rem;
+}
+
+.brand {
+  font-weight: 650;
+  color: var(--text);
+  text-decoration: none;
+  padding-block: .35rem;
+}
+.brand:hover { color: var(--accent); }
+
+/* Phone: brand + theme switch on row 1, nav on its own row below. */
+.site-nav { order: 3; flex-basis: 100%; }
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: .25rem;
+}
+.site-nav a {
+  display: block;
+  padding: .4rem .6rem;
+  border-radius: 6px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-nav li:first-child a { padding-left: 0; }
+.site-nav a:hover { color: var(--text); }
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .45em;
+}
+
+.theme-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px;
+  background: var(--bg);
+}
+.theme-switch[hidden] { display: none; }
+.theme-switch button {
+  font: inherit;
+  font-size: .8rem;
+  line-height: 1;
+  padding: .4rem .65rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-switch button:hover { color: var(--text); }
+.theme-switch button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+@media (min-width: 40rem) {
+  .wrap { padding-inline: 1.5rem; }
+  .site-nav { order: 0; flex-basis: auto; margin-left: auto; }
+  .site-nav li:first-child a { padding-left: .6rem; }
+}
+
+/* ---- footer ----------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 1.25rem;
+  font-size: .9rem;
+  color: var(--muted);
+}
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; justify-content: space-between; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--text); }
+
+/* ---- buttons ---------------------------------------------------------- */
+
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-block: 1.5rem; }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: .55rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 550;
+  text-decoration: none;
+}
+.button:hover { border-color: var(--accent); color: var(--text); }
+.button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.button.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--accent-contrast); }
+
+/* ---- home ------------------------------------------------------------- */
+
+.hero { padding-top: 1rem; }
+.pitch { font-size: 1.2rem; color: var(--muted); max-width: 40rem; }
+.bio { max-width: 40rem; }
+
+/* ---- project cards ---------------------------------------------------- */
+
+.intro { max-width: 40rem; color: var(--muted); }
+
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.card .shot { border-radius: 0; border-width: 0 0 1px; }
+.card-body { display: flex; flex-direction: column; gap: .5rem; padding: 1rem; flex: 1; }
+.card h2 { font-size: 1.1rem; margin: 0; }
+.card h2 a { color: var(--text); text-decoration: none; }
+.card h2 a:hover { color: var(--accent); }
+.card p { margin: 0; color: var(--muted); font-size: .95rem; }
+.link-note { color: var(--muted); font-size: .85rem; }
+.actions + .link-note { margin-top: -.75rem; }
+.card-links .link-note { flex-basis: 100%; }
+.card-links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin-top: auto; padding-top: .5rem; font-size: .95rem; }
+
+.tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
+.tags li {
+  font-size: .78rem;
+  padding: .15rem .55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+/* Screenshot slot: a labelled empty box until a real image replaces it. */
+.shot {
+  aspect-ratio: 16 / 10;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: .85rem;
+  text-align: center;
+  padding: 1rem;
+}
+.shot img { width: 100%; height: 100%; object-fit: cover; }
+/* Slot holding a real screenshot: fixed 16:10 frame, landscape images fill it. */
+.shot-img { position: relative; padding: 0; border-style: solid; overflow: hidden; }
+.shot-img img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; }
+/* Project-page screenshots keep their natural size at most (width/height attributes). */
+figure.shot-figure a.shot-link { display: inline-block; max-width: 100%; }
+figure.shot-figure img { border: 1px solid var(--border); border-radius: var(--radius); }
+figure.shot-figure { margin: 1.5rem 0; }
+figure.shot-figure figcaption { font-size: .85rem; color: var(--muted); margin-top: .5rem; }
+
+/* Dashboard tour (EU page): screen recording plus a gallery of the dashboard pages. */
+.tour-video { margin: 0 0 1.5rem; }
+.tour-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #f3f4f8;   /* the dashboard's own page colour, shown while loading */
+}
+.tour-video figcaption, .gallery figcaption { font-size: .85rem; color: var(--muted); margin-top: .5rem; }
+.gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+}
+.gallery figure { margin: 0; }
+.gallery a { display: block; }
+.gallery img { width: 100%; border: 1px solid var(--border); border-radius: var(--radius); }
+
+/* ---- project page ----------------------------------------------------- */
+
+.back { display: inline-block; margin-bottom: 1rem; font-size: .95rem; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 40rem; }
+.prose { max-width: 40rem; }
+
+/* ---- cv --------------------------------------------------------------- */
+
+.cv-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; }
+.cv-entry { margin-bottom: 1.25rem; }
+.cv-entry h3 { margin-bottom: .1rem; }
+.cv-meta { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+.cv-tagline { margin-bottom: .25rem; }
+.cv-tools { font-weight: normal; font-size: .9rem; color: var(--muted); }
+
+/* ---- contact ---------------------------------------------------------- */
+
+.contact-list { list-style: none; padding: 0; display: grid; gap: .75rem; max-width: 30rem; }
+.contact-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .25rem 1rem;
+  padding: .85rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.contact-list .label { font-weight: 600; }
+
+/* Email row: address as plain text (one click selects it all), a copy button
+   (shown only when JavaScript runs) and the mailto link on its own line. */
+.contact-email .email-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .6rem;
+  margin-left: auto;
+}
+.email-address { font-family: var(--mono); font-size: .95rem; user-select: all; -webkit-user-select: all; }
+.copy-button {
+  font: inherit;
+  font-size: .8rem;
+  line-height: 1;
+  min-height: 2rem;
+  padding: .4rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+.copy-button:hover { border-color: var(--accent); }
+.copy-button[hidden] { display: none; }
+.copy-status { color: var(--muted); font-size: .85rem; }
+.contact-email .email-mailto { flex-basis: 100%; text-align: right; font-size: .92rem; }
+@media (max-width: 30rem) {
+  .contact-email .email-row { margin-left: 0; }
+  .contact-email .email-mailto { text-align: left; }
+}
+
+/* ---- placeholders: impossible to miss on the page ---------------------- */
+
+.todo {
+  background: var(--todo-bg);
+  color: var(--todo-text);
+  outline: 1px dashed var(--todo-border);
+  outline-offset: 1px;
+  border-radius: 4px;
+  padding: 0 .3em;
+  font-style: normal;
+}
+div.todo, p.todo, li.todo { padding: .5rem .75rem; }
+
+/* ---- print (the CV page prints cleanly) -------------------------------- */
+
+@media print {
+  .site-header, .site-footer, .skip-link, .actions, .no-print { display: none !important; }
+  body { background: #fff; color: #000; }
+  main { padding: 0; }
+  a { color: #000; }
+}
