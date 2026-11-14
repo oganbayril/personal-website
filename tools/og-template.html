@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Source of public/og-image.png. Edit, then run: python tools/make-og.py
+     The __FONT__ tokens are replaced with the self-hosted fonts as data: URLs. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Fraunces"; font-weight: 100 900; font-style: normal; src: url(__FRAUNCES__) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+  @font-face { font-family: "Fraunces"; font-weight: 100 900; font-style: normal; src: url(__FRAUNCES_EXT__) format("woff2"); unicode-range: U+0100-02BA; }
+  @font-face { font-family: "Fraunces"; font-weight: 100 900; font-style: italic; src: url(__FRAUNCES_ITALIC__) format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 100 900; src: url(__INTER__) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+  @font-face { font-family: "Inter"; font-weight: 100 900; src: url(__INTER_EXT__) format("woff2"); unicode-range: U+0100-02BA; }
+
+  :root { --paper: #f6f1e7; --ink: #1b1a17; --muted: #4a463e; --accent: #9c2f17; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    box-sizing: border-box;
+    padding: 64px 80px;
+    display: flex;
+    flex-direction: column;
+  }
+  .rule { height: 2px; background: var(--ink); flex: none; }
+  .kicker {
+    margin: 22px 0 0;
+    font: 600 20px/1 "Inter";
+    letter-spacing: .12em;
+    color: var(--accent);
+  }
+  h1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font: 400 84px/1.02 "Fraunces";
+    letter-spacing: -.02em;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .foot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 22px; }
+  .name { font: 600 34px/1 "Fraunces"; letter-spacing: -.01em; }
+  .url { font: 500 24px/1 "Inter"; color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="rule"></div>
+  <p class="kicker">JUNIOR DATA ANALYST · İZMİR</p>
+  <h1><span>I take projects from raw data to something you can <em>click.</em></span></h1>
+  <div class="rule"></div>
+  <div class="foot"><span class="name">Ogan Bayril</span><span class="url">oganbayril.com</span></div>
+</body>
+</html>

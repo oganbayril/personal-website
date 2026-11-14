@@ -1,0 +1,14 @@
+{
+  "name": "Ogan Bayril",
+  "short_name": "Ogan Bayril",
+  "description": "Junior data analyst in İzmir: projects, CV and contact.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f6f1e7",
+  "theme_color": "#f6f1e7",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
