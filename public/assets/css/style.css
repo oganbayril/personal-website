@@ -457,8 +457,8 @@ main.home { padding-top: 0; }
   font: 400 clamp(1.5rem, 1.15rem + 1.5vw, 2rem)/1.3 var(--serif);
   letter-spacing: -.01em;
   color: var(--ink);
-  max-width: 54rem;
 }
+.closing p { margin: 0; max-width: 54rem; }   /* the rule spans the full width, the text does not */
 .closing a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .15em; }
 .closing a:hover { text-decoration-thickness: 2px; }
 
@@ -526,6 +526,7 @@ figure.shot-figure figcaption { font-size: .875rem; color: var(--muted); margin-
 .cv > :not(.cv-header) { max-width: 46rem; }
 .cv-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; }
 .cv-header h1 { margin-bottom: 0; }
+.cv-header + p { margin-top: .5rem; }
 .cv-entry { margin-bottom: 1.5rem; }
 .cv-entry h3 { margin-bottom: .15rem; }
 .cv-meta { color: var(--muted); font-size: .92rem; margin-bottom: .5rem; }
