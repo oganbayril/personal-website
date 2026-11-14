@@ -3,29 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ogan Bayril</title>
-  <meta name="description" content="Ogan Bayril: projects, CV and contact details.">
+  <title>Ogan Bayril – Junior data analyst</title>
+  <meta name="description" content="Ogan Bayril, junior data analyst in İzmir. I take projects from raw data to something you can click: collect, clean, analyze, deploy.">
   <link rel="canonical" href="https://oganbayril.com/">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1a1c20" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ogan Bayril">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Ogan Bayril">
-  <meta property="og:description" content="Ogan Bayril: projects, CV and contact details.">
+  <meta property="og:title" content="Ogan Bayril – Junior data analyst">
+  <meta property="og:description" content="Ogan Bayril, junior data analyst in İzmir. I take projects from raw data to something you can click: collect, clean, analyze, deploy.">
   <meta property="og:url" content="https://oganbayril.com/">
   <meta property="og:image" content="https://oganbayril.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ogan Bayril, oganbayril.com">
+  <meta property="og:image:alt" content="Ogan Bayril, junior data analyst in İzmir: I take projects from raw data to something you can click.">
   <meta name="twitter:card" content="summary_large_image">
 
   <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="preload" href="/assets/fonts/fraunces-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/theme.js" defer></script>
 </head>
@@ -50,22 +53,79 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" class="home">
     <div class="wrap">
-      <section class="hero">
-        <h1>Ogan Bayril</h1>
-        <p class="pitch">Junior data analyst. I take projects from raw data to something you can click.</p>
-
-        <div class="bio">
-          <p>Hi, I'm Ogan, a self-taught data analyst in İzmir (Python since 2022). I like messy, real-world data and taking projects end to end: collect, clean, analyze, deploy, and write down what the data can't tell you. I'm especially curious about how official statistics describe, and miss, everyday life, which is the thread behind my Eurostat and OECD maps. I'm looking for remote junior data analyst roles with CET overlap.</p>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-main">
+          <p class="kicker">Junior data analyst · <span lang="tr">İzmir</span></p>
+          <h1 id="hero-heading"><span class="visually-hidden">Ogan Bayril, junior data analyst: </span>I take projects from raw data to something you can <em>click.</em></h1>
         </div>
-
-        <div class="actions">
-          <a class="button primary" href="/projects">View projects</a>
-          <!-- Needs public/cv.pdf -->
-          <a class="button" href="/cv.pdf" download>Download CV</a>
+        <div class="hero-aside">
+          <p>Self-taught, Python since 2022. I like messy, real-world data and taking projects end to end: collect, clean, analyze, deploy, and write down what the data can't tell you.</p>
+          <div class="actions">
+            <a class="button primary" href="/projects">View projects</a>
+            <a class="button" href="/cv.pdf" download>Download CV</a>
+          </div>
         </div>
       </section>
+
+      <section aria-labelledby="work-heading">
+        <h2 class="kicker" id="work-heading">Selected work</h2>
+        <ul class="work-list">
+          <li class="work-row">
+            <a class="work-link" href="/projects/germany-real-estate-predictor">
+              <p class="work-figure"><span class="num">±16%</span><span class="num-caption">half of the price estimates land this close to the asking price</span></p>
+              <div class="work-text">
+                <h3 class="work-title">Germany real estate predictor</h3>
+                <p>3,000+ listings from five cities, an XGBoost model, a FastAPI service with 80+ tests and weekly retraining.</p>
+              </div>
+              <div class="thumb"><img src="/assets/img/projects/germany-real-estate-predictor-card.webp" srcset="/assets/img/projects/germany-real-estate-predictor-card-400.webp 400w, /assets/img/projects/germany-real-estate-predictor-card.webp 600w" sizes="(min-width: 54rem) 300px, calc(100vw - 40px)" alt="The price predictor demo estimating 376.495 € for a flat in Friedrichshain, Berlin." width="600" height="375" loading="lazy"></div>
+            </a>
+          </li>
+          <li class="work-row">
+            <a class="work-link" href="/projects/eu-energy-transition">
+              <p class="work-figure"><span class="num">7.2% → 19.8%</span><span class="num-caption">EU renewable share, while import dependency fell only 1.4 points</span></p>
+              <div class="work-text">
+                <h3 class="work-title">EU energy transition</h3>
+                <p>Renewables nearly tripled across 27 countries, but dependence on imports barely moved. Five-page Power BI dashboard.</p>
+              </div>
+              <div class="thumb"><img src="/assets/img/projects/eu-energy-transition-card.webp" srcset="/assets/img/projects/eu-energy-transition-card-400.webp 400w, /assets/img/projects/eu-energy-transition-card.webp 800w" sizes="(min-width: 54rem) 300px, calc(100vw - 40px)" alt="Power BI overview page with KPI cards and a line chart of EU renewable share and energy dependency, 2005–2024." width="800" height="500" loading="lazy"></div>
+            </a>
+          </li>
+          <li class="work-row">
+            <a class="work-link" href="/projects/typical-vs-average-income">
+              <p class="work-figure"><span class="num"><span aria-hidden="true">~70%</span><span class="visually-hidden">about 70%</span></span><span class="num-caption">Türkiye's typical income as a share of the average, vs 83–93% in most of Europe</span></p>
+              <div class="work-text">
+                <h3 class="work-title">Typical vs average income</h3>
+                <p>A map of 45 European and OECD countries, 2002–2024, comparing the typical person with the average.</p>
+              </div>
+              <div class="thumb"><img src="/assets/img/projects/typical-vs-average-income-card.webp" srcset="/assets/img/projects/typical-vs-average-income-card-400.webp 400w, /assets/img/projects/typical-vs-average-income-card.webp 640w" sizes="(min-width: 54rem) 300px, calc(100vw - 40px)" alt="Map of Europe shaded by the typical person's income as a percentage of the average, with Türkiye in the darkest tier." width="640" height="400" loading="lazy"></div>
+            </a>
+          </li>
+          <li class="work-row">
+            <a class="work-link" href="/projects/food-housing-spending">
+              <p class="work-figure"><span class="num">48</span><span class="num-caption">countries on the map, 1995–2024</span></p>
+              <div class="work-text">
+                <h3 class="work-title">Food & housing spending</h3>
+                <p>How much of a household budget goes to the basics, mapped country by country.</p>
+              </div>
+              <div class="thumb"><img src="/assets/img/projects/food-housing-spending-card.webp" srcset="/assets/img/projects/food-housing-spending-card-400.webp 400w, /assets/img/projects/food-housing-spending-card.webp 780w" sizes="(min-width: 54rem) 300px, calc(100vw - 40px)" alt="World map shading countries by the share of household spending that goes to food, housing and utilities." width="780" height="488" loading="lazy"></div>
+            </a>
+          </li>
+        </ul>
+        <p class="work-more"><a href="/projects">All projects →</a></p>
+      </section>
+
+      <section class="how" aria-labelledby="how-heading">
+        <h2 class="kicker" id="how-heading">How I work</h2>
+        <div class="how-grid">
+          <p class="how-block">Collect.<br>Clean.<br>Analyze.</p>
+          <p class="how-block">Deploy.<br>Say what the data can't<span class="stop">.</span></p>
+          <p class="how-tools">Python, SQL, Pandas, scikit-learn, XGBoost, Power BI, Plotly, Streamlit, FastAPI, Git.</p>
+        </div>
+      </section>
+
+      <p class="closing">Looking for remote junior data analyst roles with CET overlap. <a href="/contact">ogan@oganbayril.com</a></p>
     </div>
   </main>
 

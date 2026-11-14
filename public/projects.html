@@ -7,11 +7,12 @@
   <meta name="description" content="Selected projects by Ogan Bayril, each with the question, the result, the tools, a live demo and the code.">
   <link rel="canonical" href="https://oganbayril.com/projects">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1a1c20" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ogan Bayril">
@@ -22,10 +23,12 @@
   <meta property="og:image" content="https://oganbayril.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ogan Bayril, oganbayril.com">
+  <meta property="og:image:alt" content="Ogan Bayril, junior data analyst in İzmir: I take projects from raw data to something you can click.">
   <meta name="twitter:card" content="summary_large_image">
 
   <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="preload" href="/assets/fonts/fraunces-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/theme.js" defer></script>
 </head>
@@ -55,114 +58,118 @@
       <h1>Projects</h1>
       <p class="intro">Each project goes from raw data to something you can open. Live demos where they exist, code for all of them.</p>
 
-      <ul class="cards">
-        <li class="card">
-          <div class="shot shot-img">
-            <img src="/assets/img/projects/germany-real-estate-predictor-card.png" alt="Part of the price predictor demo: the Quarter field set to Friedrichshain, the Estimate price button, and the result of 376.495 € (5.020 € per m²), typically within ±16% on held-out data." width="600" height="375">
-          </div>
-          <div class="card-body">
-            <h2><a href="/projects/germany-real-estate-predictor">Germany real estate price predictor</a></h2>
-            <p>Estimates apartment prices in five German cities from 3,000+ scraped listings. Half of estimates land within ±16% of the asking price, and the live demo says plainly what the model can't see.</p>
-            <ul class="tags" aria-label="Tools">
-              <li>Python</li>
-              <li>XGBoost</li>
-              <li>FastAPI</li>
-              <li>PostgreSQL</li>
-              <li>scikit-learn</li>
-            </ul>
-            <div class="card-links">
-              <a href="/projects/germany-real-estate-predictor">Details</a>
-              <a href="https://germany-real-estate.oganbayril.com">Live demo</a>
-              <a href="https://github.com/oganbayril/germany-real-estate-api">Code</a>
+      <ul class="work-list">
+        <li class="work-row">
+          <div class="work-item">
+            <p class="work-figure"><span class="num">±16%</span><span class="num-caption">half of the price estimates land this close to the asking price</span></p>
+            <div class="work-text">
+              <h2 class="work-title"><a href="/projects/germany-real-estate-predictor">Germany real estate price predictor</a></h2>
+              <p>Estimates apartment prices in five German cities from 3,000+ scraped listings. Half of estimates land within ±16% of the asking price, and the live demo says plainly what the model can't see.</p>
+              <ul class="tags" aria-label="Tools">
+                <li>Python</li>
+                <li>XGBoost</li>
+                <li>FastAPI</li>
+                <li>PostgreSQL</li>
+                <li>scikit-learn</li>
+              </ul>
+              <div class="card-links">
+                <a href="/projects/germany-real-estate-predictor">Details</a>
+                <a href="https://germany-real-estate.oganbayril.com">Live demo</a>
+                <a href="https://github.com/oganbayril/germany-real-estate-api">Code</a>
+              </div>
             </div>
+            <div class="thumb"><img src="/assets/img/projects/germany-real-estate-predictor-card.webp" srcset="/assets/img/projects/germany-real-estate-predictor-card-400.webp 400w, /assets/img/projects/germany-real-estate-predictor-card.webp 600w" sizes="(min-width: 54rem) 300px, calc(100vw - 40px)" alt="Part of the price predictor demo: the Quarter field set to Friedrichshain, the Estimate price button, and the result of 376.495 € (5.020 € per m²), typically within ±16% on held-out data." width="600" height="375"></div>
           </div>
         </li>
-        <li class="card">
-          <div class="shot shot-img">
-            <img src="/assets/img/projects/typical-vs-average-income-card.png" alt="Map of Europe shaded in four tiers by the typical person's income as a percentage of the average. Türkiye is in the darkest tier, and the UK is hatched as an OECD value." width="640" height="400" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h2><a href="/projects/typical-vs-average-income">Typical vs average income map</a></h2>
-            <p>Maps how far the typical person's income sits from the average across 45 countries, 2002-2024. In Türkiye it's about 70%, in most of Europe 83-93%.</p>
-            <ul class="tags" aria-label="Tools">
-              <li>Python</li>
-              <li>Pandas</li>
-              <li>Plotly</li>
-              <li>Eurostat</li>
-              <li>OECD</li>
-            </ul>
-            <div class="card-links">
-              <a href="/projects/typical-vs-average-income">Details</a>
-              <a href="https://typical-vs-average-income.oganbayril.com">Live demo</a>
-              <a href="https://github.com/oganbayril/typical-vs-average-income">Code</a>
+        <li class="work-row">
+          <div class="work-item">
+            <p class="work-figure"><span class="num"><span aria-hidden="true">~70%</span><span class="visually-hidden">about 70%</span></span><span class="num-caption">Türkiye's typical income as a share of the average, vs 83–93% in most of Europe</span></p>
+            <div class="work-text">
+              <h2 class="work-title"><a href="/projects/typical-vs-average-income">Typical vs average income map</a></h2>
+              <p>Maps how far the typical person's income sits from the average across 45 countries, 2002-2024. In Türkiye it's about 70%, in most of Europe 83-93%.</p>
+              <ul class="tags" aria-label="Tools">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Plotly</li>
+                <li>Eurostat</li>
+                <li>OECD</li>
+              </ul>
+              <div class="card-links">
+                <a href="/projects/typical-vs-average-income">Details</a>
+                <a href="https://typical-vs-average-income.oganbayril.com">Live demo</a>
+                <a href="https://github.com/oganbayril/typical-vs-average-income">Code</a>
+              </div>
             </div>
+            <div class="thumb"><img src="/assets/img/projects/typical-vs-average-income-card.webp" srcset="/assets/img/projects/typical-vs-average-income-card-400.webp 400w, /assets/img/projects/typical-vs-average-income-card.webp 640w" sizes="(min-width: 54rem) 300px, calc(100vw - 40px)" alt="Map of Europe shaded in four tiers by the typical person's income as a percentage of the average. Türkiye is in the darkest tier, and the UK is hatched as an OECD value." width="640" height="400" loading="lazy"></div>
           </div>
         </li>
-        <li class="card">
-          <div class="shot shot-img">
-            <img src="/assets/img/projects/eu-energy-transition-card.png" alt="Power BI overview page: EU renewable energy share rose from 7.16% in 2005 to 19.81% in 2024, while energy dependency went from 57.45% to 56.04%, shown as KPI cards and a line chart." width="800" height="500" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h2><a href="/projects/eu-energy-transition">EU energy transition analysis</a></h2>
-            <p>Renewable share nearly tripled, yet import dependency fell only 1.4 points. Ridge/Lasso panel models and a Power BI dashboard explain why.</p>
-            <ul class="tags" aria-label="Tools">
-              <li>Python</li>
-              <li>SQL</li>
-              <li>Pandas</li>
-              <li>scikit-learn</li>
-              <li>Plotly</li>
-              <li>Power BI</li>
-              <li>Eurostat API</li>
-            </ul>
-            <div class="card-links">
-              <a href="/projects/eu-energy-transition">Details</a>
-              <a href="https://oganbayril-eu-energy-transition-analysis-dashboardapp-stset4.streamlit.app/">Streamlit app</a>
-              <a href="https://github.com/oganbayril/eu-energy-transition-analysis">Code</a>
-              <span class="link-note">Streamlit app: free-tier app, may take about 30 seconds to wake up.</span>
+        <li class="work-row">
+          <div class="work-item">
+            <p class="work-figure"><span class="num">7.2% → 19.8%</span><span class="num-caption">EU renewable share, while import dependency fell only 1.4 points</span></p>
+            <div class="work-text">
+              <h2 class="work-title"><a href="/projects/eu-energy-transition">EU energy transition analysis</a></h2>
+              <p>Renewable share nearly tripled, yet import dependency fell only 1.4 points. Ridge/Lasso panel models and a Power BI dashboard explain why.</p>
+              <ul class="tags" aria-label="Tools">
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Pandas</li>
+                <li>scikit-learn</li>
+                <li>Plotly</li>
+                <li>Power BI</li>
+                <li>Eurostat API</li>
+              </ul>
+              <div class="card-links">
+                <a href="/projects/eu-energy-transition">Details</a>
+                <a href="https://oganbayril-eu-energy-transition-analysis-dashboardapp-stset4.streamlit.app/">Streamlit app</a>
+                <a href="https://github.com/oganbayril/eu-energy-transition-analysis">Code</a>
+                <span class="link-note">Streamlit app: free-tier app, may take about 30 seconds to wake up.</span>
+              </div>
             </div>
+            <div class="thumb"><img src="/assets/img/projects/eu-energy-transition-card.webp" srcset="/assets/img/projects/eu-energy-transition-card-400.webp 400w, /assets/img/projects/eu-energy-transition-card.webp 800w" sizes="(min-width: 54rem) 300px, calc(100vw - 40px)" alt="Power BI overview page: EU renewable energy share rose from 7.16% in 2005 to 19.81% in 2024, while energy dependency went from 57.45% to 56.04%, shown as KPI cards and a line chart." width="800" height="500" loading="lazy"></div>
           </div>
         </li>
-        <!-- No project page: Streamlit app and code links only. -->
-        <li class="card">
-          <div class="shot shot-img">
-            <img src="/assets/img/projects/turkey-asylum-analysis-card.png" alt="Map of 2015 asylum applications to Turkey by origin country: Türkiye outlined in red, with Afghanistan and Iraq in the brightest colours and Iran in blue." width="400" height="250" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h2>Turkey asylum seeker analysis</h2>
-            <p>Asylum applications in Turkey peaked near 130k in 2015, while a separate outflow of Turkish citizens seeking asylum abroad emerged after 2016.</p>
-            <ul class="tags" aria-label="Tools">
-              <li>Python</li>
-              <li>Pandas</li>
-              <li>Plotly</li>
-              <li>Streamlit</li>
-              <li>UNHCR/HDX data</li>
-            </ul>
-            <div class="card-links">
-              <a href="https://turkey-asylum-analysis-97r3muw7kmhy7iycvs4fyn.streamlit.app/">Streamlit app</a>
-              <a href="https://github.com/oganbayril/turkey-asylum-analysis">Code</a>
-              <span class="link-note">Streamlit app: free-tier app, may take about 30 seconds to wake up.</span>
+        <li class="work-row">
+          <div class="work-item">
+            <p class="work-figure"><span class="num"><span aria-hidden="true">~130k</span><span class="visually-hidden">about 130,000</span></span><span class="num-caption">asylum applications in Turkey in 2015, the peak year</span></p>
+            <div class="work-text">
+              <h2 class="work-title"><a href="https://turkey-asylum-analysis-97r3muw7kmhy7iycvs4fyn.streamlit.app/">Turkey asylum seeker analysis</a></h2>
+              <p>Asylum applications in Turkey peaked near 130k in 2015, while a separate outflow of Turkish citizens seeking asylum abroad emerged after 2016.</p>
+              <ul class="tags" aria-label="Tools">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Plotly</li>
+                <li>Streamlit</li>
+                <li>UNHCR/HDX data</li>
+              </ul>
+              <div class="card-links">
+                <a href="https://turkey-asylum-analysis-97r3muw7kmhy7iycvs4fyn.streamlit.app/">Streamlit app</a>
+                <a href="https://github.com/oganbayril/turkey-asylum-analysis">Code</a>
+                <span class="link-note">Streamlit app: free-tier app, may take about 30 seconds to wake up.</span>
+              </div>
             </div>
+            <div class="thumb"><img src="/assets/img/projects/turkey-asylum-analysis-card.webp" alt="Map of 2015 asylum applications to Turkey by origin country: Türkiye outlined in red, with Afghanistan and Iraq in the brightest colours and Iran in blue." width="400" height="250" loading="lazy"></div>
           </div>
         </li>
-        <li class="card">
-          <div class="shot shot-img">
-            <img src="/assets/img/projects/food-housing-spending-card.png" alt="World map of the Americas, Europe and Japan shaded in three tiers by the share of household spending that goes to food, housing and utilities; most of Africa and Asia has no data." width="780" height="488" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h2><a href="/projects/food-housing-spending">Food and housing spending share</a></h2>
-            <p>How much of household spending goes to food, housing and utilities across 48 countries, with data-quality decisions documented.</p>
-            <ul class="tags" aria-label="Tools">
-              <li>Python</li>
-              <li>Pandas</li>
-              <li>Plotly</li>
-              <li>Eurostat</li>
-              <li>OECD</li>
-            </ul>
-            <div class="card-links">
-              <a href="/projects/food-housing-spending">Details</a>
-              <a href="https://food-housing-spending-share.oganbayril.com">Live demo</a>
-              <a href="https://github.com/oganbayril/food-housing-spending-share">Code</a>
+        <li class="work-row">
+          <div class="work-item">
+            <p class="work-figure"><span class="num">48</span><span class="num-caption">countries on the map, 1995–2024</span></p>
+            <div class="work-text">
+              <h2 class="work-title"><a href="/projects/food-housing-spending">Food and housing spending share</a></h2>
+              <p>How much of household spending goes to food, housing and utilities across 48 countries, with data-quality decisions documented.</p>
+              <ul class="tags" aria-label="Tools">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Plotly</li>
+                <li>Eurostat</li>
+                <li>OECD</li>
+              </ul>
+              <div class="card-links">
+                <a href="/projects/food-housing-spending">Details</a>
+                <a href="https://food-housing-spending-share.oganbayril.com">Live demo</a>
+                <a href="https://github.com/oganbayril/food-housing-spending-share">Code</a>
+              </div>
             </div>
+            <div class="thumb"><img src="/assets/img/projects/food-housing-spending-card.webp" srcset="/assets/img/projects/food-housing-spending-card-400.webp 400w, /assets/img/projects/food-housing-spending-card.webp 780w" sizes="(min-width: 54rem) 300px, calc(100vw - 40px)" alt="World map of the Americas, Europe and Japan shaded in three tiers by the share of household spending that goes to food, housing and utilities; most of Africa and Asia has no data." width="780" height="488" loading="lazy"></div>
           </div>
         </li>
       </ul>

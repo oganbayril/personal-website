@@ -2,7 +2,7 @@
   Template for a new project page. Not deployed (outside public/).
   1. Copy to public/projects/<slug>.html (lowercase, hyphens).
   2. Replace __SLUG__, __TITLE__, __REPO__, __LIVE_URL__ (or delete the live demo button and list item).
-  3. Fill in the TODOs, add a card to public/projects.html and a <url> to public/sitemap.xml.
+  3. Fill in the TODOs, add a row to public/projects.html and a <url> to public/sitemap.xml.
 -->
 <!doctype html>
 <html lang="en">
@@ -13,11 +13,12 @@
   <meta name="description" content="__TITLE__, a project by Ogan Bayril: the question, the result, the tools, a live demo and the code.">
   <link rel="canonical" href="https://oganbayril.com/projects/__SLUG__">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1a1c20" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ogan Bayril">
@@ -28,10 +29,12 @@
   <meta property="og:image" content="https://oganbayril.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ogan Bayril, oganbayril.com">
+  <meta property="og:image:alt" content="Ogan Bayril, junior data analyst in İzmir: I take projects from raw data to something you can click.">
   <meta name="twitter:card" content="summary_large_image">
 
   <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="preload" href="/assets/fonts/fraunces-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/theme.js" defer></script>
 </head>
